@@ -1,4 +1,5 @@
 import mapboxgl from "mapbox-gl";
+import createMarker from "./marker";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZm1nb29kd2luaXYiLCJhIjoiY2todXQ4NHE3MDR6YzJzbW9rZjR4YTdjMSJ9.8oWqsAFsuEDQlLpkW24xmA";
@@ -10,11 +11,6 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v10",
 });
 
-const marker = document.createElement("div");
+const marker = createMarker("activity", [-74.009151, 40.705086]);
 
-marker.style.height = "30px";
-marker.style.width = "30px";
-marker.style.backgroundColor = "red";
-marker.style.borderRadius = "20px";
-
-new mapboxgl.Marker(marker).setLngLat([-74.009151, 40.705086]).addTo(map);
+marker.addTo(map);

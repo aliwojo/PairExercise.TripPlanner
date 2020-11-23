@@ -31,7 +31,22 @@ eval("/* Mapbox GL JS is licensed under the 3-Clause BSD License. Full text of l
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);\n\n\n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().accessToken) =\n  \"pk.eyJ1IjoiZm1nb29kd2luaXYiLCJhIjoiY2todXQ4NHE3MDR6YzJzbW9rZjR4YTdjMSJ9.8oWqsAFsuEDQlLpkW24xmA\";\n\nconst map = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Map)({\n  container: \"map\",\n  center: [-74.009, 40.705],\n  zoom: 12,\n  style: \"mapbox://styles/mapbox/streets-v10\",\n});\n\nconst marker = document.createElement(\"div\");\n\nmarker.style.height = \"30px\";\nmarker.style.width = \"30px\";\nmarker.style.backgroundColor = \"red\";\nmarker.style.borderRadius = \"20px\";\n\nnew (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Marker)(marker).setLngLat([-74.009151, 40.705086]).addTo(map);\n\n\n//# sourceURL=webpack://pairexercise.tripplanner/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _marker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./marker */ \"./src/marker.js\");\n\n\n\n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().accessToken) =\n  \"pk.eyJ1IjoiZm1nb29kd2luaXYiLCJhIjoiY2todXQ4NHE3MDR6YzJzbW9rZjR4YTdjMSJ9.8oWqsAFsuEDQlLpkW24xmA\";\n\nconst map = new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Map)({\n  container: \"map\",\n  center: [-74.009, 40.705],\n  zoom: 12,\n  style: \"mapbox://styles/mapbox/streets-v10\",\n});\n\nconst marker = (0,_marker__WEBPACK_IMPORTED_MODULE_1__.default)(\"activity\", [-74.009151, 40.705086]);\n\nmarker.addTo(map);\n\n\n//# sourceURL=webpack://pairexercise.tripplanner/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/marker.js":
+/*!***********************!*\
+  !*** ./src/marker.js ***!
+  \***********************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst images = {\n  activities: \"url(http://i.imgur.com/WbMOfMl.png)\",\n  hotels: \"url(http://i.imgur.com/D9574Cu.png)\",\n  restaurants: \"url(http://i.imgur.com/cqR6pUI.png)\",\n};\n\nfunction createMarker(type, location) {\n  const marker = document.createElement(\"div\");\n  marker.style.height = \"39px\";\n  marker.style.width = \"32px\";\n  if (type === \"hotel\") {\n    marker.style.backgroundImage = images.hotels;\n  } else if (type === \"restaurant\") {\n    marker.style.backgroundImage = images.restaurants;\n  } else if (type === \"activity\") {\n    marker.style.backgroundImage = images.activities;\n  }\n\n  return new (mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default().Marker)(marker).setLngLat(location);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createMarker);\n\n\n//# sourceURL=webpack://pairexercise.tripplanner/./src/marker.js?");
 
 /***/ })
 
